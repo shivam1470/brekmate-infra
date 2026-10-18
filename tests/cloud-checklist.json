@@ -1,0 +1,17 @@
+{
+  "status": "not-executed",
+  "checks": [
+    "Account/region/state isolation and concurrent S3 lock acquisition",
+    "IAM allowed and forbidden operations with deployed runtime roles",
+    "Customer/staff token validation and object authorisation through actual API",
+    "Real handler artifact and signed webhook verification",
+    "DynamoDB conditional stock and reward concurrency transactions",
+    "Worker queue retry, partial batch failure and DLQ redrive if enabled",
+    "Private-origin access denied; staff app HTTPS and browser routes work",
+    "Secret rotation without state leakage",
+    "DynamoDB restore into isolated tables and ledger reconciliation",
+    "Alert delivery and budget/tag activation",
+    "Guarded staging cleanup excludes durable data and bootstrap",
+    "Actual Android/iPhone release builds against staging"
+  ]
+}

@@ -1,0 +1,6 @@
+# CI scope
+validate.yml has no AWS credentials or id-token permission. It runs Python source policies plus provider schema and mock-only PLAN checks. cloud-plan.yml is manual, gated by CLOUD_PLAN_ENABLED AND BASELINE_ONLY_ENVIRONMENT, and requires protected GitHub environments, exact OIDC trust and per-environment AWS_PLAN_ROLE_ARN/AWS_ACCOUNT_ID/AWS_REGION/STATE_BUCKET variables. It produces a BASELINE-ONLY plan with application flags disabled; never run it against an environment already hosting applications. For actual release planning wire reviewed immutable application inputs rather than baseline defaults.
+
+No automatic apply workflow is supplied. Automated infra write permissions require a reviewed account-specific role/policy. Do not attach AdministratorAccess or trust all pull requests. The plan role may need narrowly reviewed read-permission additions for the actual resources; verify in staging rather than broadening it silently.
+
+Saved plans are sensitive and deliberately not uploaded to public CI artifacts. GitHub-hosted execution has quotas/costs; this package does not assume unlimited free runners. A Mac runner can later build native apps but is not installed or remotely controlled here. Action commits are pinned from official repository refs; reverify updates before changing them.

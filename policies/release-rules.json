@@ -1,0 +1,22 @@
+{
+  "protectedTypes": [
+    "aws_dynamodb_table",
+    "aws_cognito_user_pool",
+    "aws_secretsmanager_secret"
+  ],
+  "forbiddenTypes": [
+    "aws_nat_gateway",
+    "aws_eks_cluster",
+    "aws_db_instance",
+    "aws_elb",
+    "aws_lb"
+  ],
+  "requiredEnvironmentTags": [
+    "Project",
+    "Environment",
+    "ManagedBy"
+  ],
+  "productionAccountRequiresExactMatch": true,
+  "savedPlansAreSensitive": true,
+  "costAlertsAreNotCaps": true
+}

@@ -1,0 +1,238 @@
+{
+  "variable": {
+    "name": {
+      "type": "string",
+      "description": ""
+    },
+    "tags": {
+      "type": "map(string)",
+      "description": "",
+      "default": {}
+    },
+    "production": {
+      "type": "bool",
+      "description": ""
+    },
+    "connect_origins": {
+      "type": "list(string)",
+      "default": [],
+      "description": "Exact HTTPS API and Cognito origins permitted by the staff browser CSP.",
+      "validation": [
+        {
+          "condition": "${alltrue([for origin in var.connect_origins : can(regex(\"^https://[A-Za-z0-9.-]+(:[0-9]+)?$\", origin))])}",
+          "error_message": "CSP connections require exact HTTPS origins without wildcard or path."
+        }
+      ]
+    }
+  },
+  "resource": {
+    "aws_s3_bucket": {
+      "site": {
+        "bucket": "${var.name}-staff",
+        "force_destroy": false,
+        "tags": "${var.tags}"
+      }
+    },
+    "aws_s3_bucket_public_access_block": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "block_public_acls": true,
+        "block_public_policy": true,
+        "ignore_public_acls": true,
+        "restrict_public_buckets": true
+      }
+    },
+    "aws_s3_bucket_ownership_controls": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "rule": [
+          {
+            "object_ownership": "BucketOwnerEnforced"
+          }
+        ]
+      }
+    },
+    "aws_s3_bucket_server_side_encryption_configuration": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "rule": [
+          {
+            "apply_server_side_encryption_by_default": [
+              {
+                "sse_algorithm": "AES256"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "aws_s3_bucket_versioning": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "versioning_configuration": [
+          {
+            "status": "Enabled"
+          }
+        ]
+      }
+    },
+    "aws_s3_bucket_lifecycle_configuration": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "rule": [
+          {
+            "id": "retire-old-builds",
+            "status": "Enabled",
+            "filter": [
+              {
+                "prefix": ""
+              }
+            ],
+            "noncurrent_version_expiration": [
+              {
+                "noncurrent_days": 30
+              }
+            ],
+            "abort_incomplete_multipart_upload": [
+              {
+                "days_after_initiation": 7
+              }
+            ]
+          }
+        ],
+        "depends_on": [
+          "aws_s3_bucket_versioning.site"
+        ]
+      }
+    },
+    "aws_cloudfront_origin_access_control": {
+      "site": {
+        "name": "${var.name}-staff",
+        "origin_access_control_origin_type": "s3",
+        "signing_behavior": "always",
+        "signing_protocol": "sigv4"
+      }
+    },
+    "aws_cloudfront_response_headers_policy": {
+      "site": {
+        "name": "${var.name}-staff-security",
+        "security_headers_config": [
+          {
+            "content_type_options": [
+              {
+                "override": true
+              }
+            ],
+            "frame_options": [
+              {
+                "frame_option": "DENY",
+                "override": true
+              }
+            ],
+            "referrer_policy": [
+              {
+                "referrer_policy": "same-origin",
+                "override": true
+              }
+            ],
+            "strict_transport_security": [
+              {
+                "access_control_max_age_sec": 31536000,
+                "include_subdomains": true,
+                "preload": false,
+                "override": true
+              }
+            ],
+            "content_security_policy": [
+              {
+                "content_security_policy": "${join(\" \", [\"default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; connect-src 'self'\", join(\" \", var.connect_origins), \";\"])}",
+                "override": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "aws_cloudfront_distribution": {
+      "site": {
+        "enabled": true,
+        "default_root_object": "index.html",
+        "price_class": "PriceClass_200",
+        "is_ipv6_enabled": true,
+        "http_version": "http2",
+        "origin": [
+          {
+            "domain_name": "${aws_s3_bucket.site.bucket_regional_domain_name}",
+            "origin_id": "private-staff-s3",
+            "origin_access_control_id": "${aws_cloudfront_origin_access_control.site.id}"
+          }
+        ],
+        "default_cache_behavior": [
+          {
+            "target_origin_id": "private-staff-s3",
+            "viewer_protocol_policy": "redirect-to-https",
+            "allowed_methods": [
+              "GET",
+              "HEAD",
+              "OPTIONS"
+            ],
+            "cached_methods": [
+              "GET",
+              "HEAD"
+            ],
+            "compress": true,
+            "cache_policy_id": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+            "response_headers_policy_id": "${aws_cloudfront_response_headers_policy.site.id}",
+            "function_association": [
+              {
+                "event_type": "viewer-request",
+                "function_arn": "${aws_cloudfront_function.spa.arn}"
+              }
+            ]
+          }
+        ],
+        "restrictions": [
+          {
+            "geo_restriction": [
+              {
+                "restriction_type": "none"
+              }
+            ]
+          }
+        ],
+        "viewer_certificate": [
+          {
+            "cloudfront_default_certificate": true
+          }
+        ],
+        "tags": "${var.tags}"
+      }
+    },
+    "aws_s3_bucket_policy": {
+      "site": {
+        "bucket": "${aws_s3_bucket.site.id}",
+        "policy": "${jsonencode({\"Version\" = \"2012-10-17\", \"Statement\" = [{\"Effect\" = \"Allow\", \"Action\" = [\"s3:GetObject\"], \"Resource\" = [\"${aws_s3_bucket.site.arn}/*\"], \"Principal\" = {\"Service\" = \"cloudfront.amazonaws.com\"}, \"Condition\" = {\"StringEquals\" = {\"AWS:SourceArn\" = aws_cloudfront_distribution.site.arn}}}, {\"Effect\" = \"Deny\", \"Action\" = [\"s3:*\"], \"Resource\" = [aws_s3_bucket.site.arn, \"${aws_s3_bucket.site.arn}/*\"], \"Principal\" = \"*\", \"Condition\" = {\"Bool\" = {\"aws:SecureTransport\" = \"false\"}}}]})}"
+      }
+    },
+    "aws_cloudfront_function": {
+      "spa": {
+        "name": "${var.name}-spa",
+        "runtime": "cloudfront-js-2.0",
+        "comment": "Rewrite extensionless staff routes only; API uses another origin.",
+        "publish": true,
+        "code": "function handler(event) { var request = event.request; var uri = request.uri; if (uri.endsWith(\"/\") || uri.split(\"/\").pop().indexOf(\".\") === -1) { request.uri = \"/index.html\"; } return request; }"
+      }
+    }
+  },
+  "output": {
+    "url": {
+      "value": "https://${aws_cloudfront_distribution.site.domain_name}"
+    },
+    "bucket": {
+      "value": "${aws_s3_bucket.site.id}"
+    },
+    "distribution_id": {
+      "value": "${aws_cloudfront_distribution.site.id}"
+    }
+  }
+}

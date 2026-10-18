@@ -1,0 +1,1883 @@
+[
+  {
+    "service": "AWSLambda",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-16T18:23:59Z",
+    "rates": [
+      {
+        "sku": "HQ8ESB5T28H5J7PQ",
+        "usage": "APS3-Lambda-Managed-Instances-Request-ARM",
+        "description": "$0.0000002 per Request for Lambda-Managed-Instances-Request-ARM in Asia Pacific (Mumbai)",
+        "USD": "0.0000002000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HFMSCV2R7KKUKW6J",
+        "usage": "APS3-Lambda-Web-Request-ARM",
+        "description": "$0.0000003 per Request for Lambda-Web-Request-ARM in Asia Pacific (Mumbai)",
+        "USD": "0.0000003000",
+        "unit": "Request",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ZQVCC2M69R4S79XS",
+        "usage": "Global-Request",
+        "description": "AWS Lambda - Requests Free Tier - 1,000,000 Requests",
+        "USD": "0.0000000000",
+        "unit": "Request",
+        "beginRange": "0"
+      },
+      {
+        "sku": "84CXDMMA25MUNN4T",
+        "usage": "APS3-Lambda-Edge-Request",
+        "description": "AWS Lambda Edge - Total Requests - Asia Pacific (Mumbai)",
+        "USD": "0.0000006000",
+        "unit": "Request",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ABY5YC3TPKJ8U96C",
+        "usage": "APS3-Lambda-Durable-Execution-TimedStorage-ByteHrs",
+        "description": "$0.16 per GigaBytesMonth for Lambda-Durable-Execution-TimedStorage-ByteHrs in Asia Pacific (Mumbai)",
+        "USD": "0.1600000000",
+        "unit": "GigaBytesMonth",
+        "beginRange": "0"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-1",
+        "USD": "0.0000133334",
+        "unit": "Lambda-GB-Second",
+        "beginRange": "0"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-2",
+        "USD": "0.0000120001",
+        "unit": "Lambda-GB-Second",
+        "beginRange": "7500000000"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-3",
+        "USD": "0.0000106667",
+        "unit": "Lambda-GB-Second",
+        "beginRange": "18750000000"
+      },
+      {
+        "sku": "54Q6FV7YSHVE7E44",
+        "usage": "APS3-Lambda-Managed-Instances-Request",
+        "description": "$0.0000002 per Request for Lambda-Managed-Instances-Request in Asia Pacific (Mumbai)",
+        "USD": "0.0000002000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "VPGUBFQ4KNZKMKGJ",
+        "usage": "APS3-Request",
+        "description": "AWS Lambda - Total Requests - Asia Pacific (Mumbai)",
+        "USD": "0.0000002000",
+        "unit": "Request",
+        "beginRange": "0"
+      },
+      {
+        "sku": "RYFSQRRXQ4R9CK7A",
+        "usage": "APS3-Request-ARM",
+        "description": "AWS Lambda - Total Requests for ARM - Asia Pacific (Mumbai)",
+        "USD": "0.0000002000",
+        "unit": "Requests",
+        "beginRange": "0"
+      }
+    ]
+  },
+  {
+    "service": "AmazonApiGateway",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonApiGateway/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-13T00:30:44Z",
+    "rates": [
+      {
+        "sku": "S2BWD3VP3K4M5Q9P",
+        "usage": "APS3-ApiGatewayHttpRequest",
+        "description": "$1.05/million requests - API Gateway HTTP API (first 300 million)",
+        "USD": "0.0000010500",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "S2BWD3VP3K4M5Q9P",
+        "usage": "APS3-ApiGatewayHttpRequest",
+        "description": "$0.95/million requests - API Gateway HTTP API (more than 300 million)",
+        "USD": "0.0000009500",
+        "unit": "Requests",
+        "beginRange": "300000000"
+      },
+      {
+        "sku": "AEUDCPQMKMJHSZGF",
+        "usage": "APS3-ApiGatewayRequest",
+        "description": "$3.50/million requests - first 333 million requests/month",
+        "USD": "0.0000035000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "AEUDCPQMKMJHSZGF",
+        "usage": "APS3-ApiGatewayRequest",
+        "description": "$2.80/million requests - next 667 million requests/month",
+        "USD": "0.0000028000",
+        "unit": "Requests",
+        "beginRange": "333000000"
+      },
+      {
+        "sku": "AEUDCPQMKMJHSZGF",
+        "usage": "APS3-ApiGatewayRequest",
+        "description": "$2.38/million requests - next 19 billion requests/month",
+        "USD": "0.0000023800",
+        "unit": "Requests",
+        "beginRange": "1000000000"
+      },
+      {
+        "sku": "AEUDCPQMKMJHSZGF",
+        "usage": "APS3-ApiGatewayRequest",
+        "description": "$1.51/million requests - over 20 billion requests/month",
+        "USD": "0.0000015100",
+        "unit": "Requests",
+        "beginRange": "20000000000"
+      }
+    ]
+  },
+  {
+    "service": "AmazonDynamoDB",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/ap-south-1/index.json",
+    "publicationDate": "2026-09-11T12:44:22Z",
+    "rates": [
+      {
+        "sku": "TVUP3J3JU42FFXR2",
+        "usage": "APS3-IA-TimedStorage-ByteHrs",
+        "description": "$0.11400 per GB-Month of IA storage in Asia Pacific (Mumbai)",
+        "USD": "0.1140000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HWEZWZFNJST4WE4A",
+        "usage": "APS3-IA-ReadRequestUnits",
+        "description": "$0.178 per million IA read request units in Asia Pacific (Mumbai)",
+        "USD": "0.0000001780",
+        "unit": "ReadRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PAGTB5QJBHF46T39",
+        "usage": "APS3-IA-ReplWriteRequestUnits",
+        "description": "$0.89 per million replicated IA write request units in Asia Pacific (Mumbai)",
+        "USD": "0.0000008900",
+        "unit": "ReplicatedWriteRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "XUZH55DS4SV7E8DW",
+        "usage": "APS3-ReplWriteRequestUnits",
+        "description": "$0.71 per million ReplicatedWriteRequestUnit in Asia Pacific (Mumbai)",
+        "USD": "0.0000007100",
+        "unit": "ReplicatedWriteRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TQAUAS3WNFNTYB4W",
+        "usage": "APS3-VectorWriteRequest",
+        "description": "$0.59072 per GB of vector write requests in Asia Pacific (Mumbai)",
+        "USD": "0.5907200000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HQZY4ZFUTRDPV7ZE",
+        "usage": "APS3-ReadRequestUnits",
+        "description": "$0.1425 per million read request units (Asia Pacific (India))",
+        "USD": "0.0000001425",
+        "unit": "ReadRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "A5DP2X4YSZ84WEJA",
+        "usage": "APS3-WriteRequestUnits",
+        "description": "$0.71 per million write request units (Asia Pacific (India))",
+        "USD": "0.0000007100",
+        "unit": "WriteRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "8Q6HK3ASV67MN388",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.00 per GB-Month of storage for first 25 free GB-Months",
+        "USD": "0.0000000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "8Q6HK3ASV67MN388",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.285 per GB-Month of storage used beyond first 25 free GB-Months",
+        "USD": "0.2850000000",
+        "unit": "GB-Mo",
+        "beginRange": "25"
+      },
+      {
+        "sku": "4QP8CNC65HXP42PN",
+        "usage": "APS3-TimedPITRStorage-ByteHrs",
+        "description": "$0.228 per GB-Month of storage used for DynamoDB PITR backup",
+        "USD": "0.2280000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "C2GFQ7TYGJVM4SYJ",
+        "usage": "APS3-Streams-Requests",
+        "description": "$0.00 for 2.5 million DynamoDB Streams read request units for a month (free tier) (Asia Pacific (India))",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "C2GFQ7TYGJVM4SYJ",
+        "usage": "APS3-Streams-Requests",
+        "description": "$0.000000228 per DynamoDB Streams read request unit beyond free tier (Asia Pacific (India))",
+        "USD": "0.0000002280",
+        "unit": "Requests",
+        "beginRange": "2500000"
+      },
+      {
+        "sku": "8V8GNJSB5W9FXEY3",
+        "usage": "APS3-IA-WriteRequestUnits",
+        "description": "$0.89 per million IA write request units in Asia Pacific (Mumbai)",
+        "USD": "0.0000008900",
+        "unit": "WriteRequestUnits",
+        "beginRange": "0"
+      },
+      {
+        "sku": "V3E9BYR8SZM4Q7JR",
+        "usage": "APS3-IA-VectorWriteRequest",
+        "description": "$0.74167 per GB of IA vector write requests in Asia Pacific (Mumbai)",
+        "USD": "0.7416700000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "YNVGZG3NNGHKZAE3",
+        "usage": "APS3-TimedBackupStorage-ByteHrs",
+        "description": "$0.114 per GB-Month of storage used for on-demand backup",
+        "USD": "0.1140000000",
+        "unit": "GB-Month",
+        "beginRange": "0"
+      }
+    ]
+  },
+  {
+    "service": "AWSSecretsManager",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSSecretsManager/current/ap-south-1/index.json",
+    "publicationDate": "2026-09-11T12:46:10Z",
+    "rates": [
+      {
+        "sku": "AET58EC77HZBS8AB",
+        "usage": "APS3-AWSSecretsManager-Secrets",
+        "description": "$0.40 per Secret",
+        "USD": "0.4000000000",
+        "unit": "Secrets",
+        "beginRange": "0"
+      },
+      {
+        "sku": "MU5JA4VMFRFD3S2W",
+        "usage": "APS3-AWSSecretsManagerAPIRequest",
+        "description": "$0.05 per 10000 API Requests",
+        "USD": "0.0000050000",
+        "unit": "API Requests",
+        "beginRange": "0"
+      }
+    ]
+  },
+  {
+    "service": "AmazonCloudWatch",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-07T11:55:40Z",
+    "rates": [
+      {
+        "sku": "5Z34PN4XUE3BR7VV",
+        "usage": "APS3-CW:CompositeAlarmMonitorUsage",
+        "description": "$0.50 per composite alarm month - Asia Pacific (Mumbai)",
+        "USD": "0.5000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PX8JWH5BQ2WDX3TS",
+        "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+        "description": "$0.25 per GB of CloudFront vended logs ingested in Infrequent Access log class for the first 10TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.2500000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PX8JWH5BQ2WDX3TS",
+        "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+        "description": "$0.15 per GB of CloudFront vended logs ingested in Infrequent Access log class for the next 20TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.1500000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "PX8JWH5BQ2WDX3TS",
+        "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+        "description": "$0.075 per GB of CloudFront vended logs ingested in Infrequent Access log class for the next 20TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.0750000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "PX8JWH5BQ2WDX3TS",
+        "usage": "APS3-VendedLogIA-Bytes-CFLogs",
+        "description": "$0.05 per GB of CloudFront vended logs ingested in Infrequent Access log class over 50TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.0500000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "27TK9EJ649Q4QSJS",
+        "usage": "APS3-CW:HighResAlarmMonitorUsage",
+        "description": "$0.30 per alarm metric month (high resolution) - Asia Pacific (Mumbai)",
+        "USD": "0.3000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HYGQDT54G4RKQKPX",
+        "usage": "APS3-VendedLog-Bytes",
+        "description": "$0.67 per GB of vended logs ingested in Standard log class for the first 10TB - Asia Pacific (Mumbai)",
+        "USD": "0.6700000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HYGQDT54G4RKQKPX",
+        "usage": "APS3-VendedLog-Bytes",
+        "description": "$0.335 per GB of vended logs ingested in Standard log class for the next 20TB - Asia Pacific (Mumbai)",
+        "USD": "0.3350000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "HYGQDT54G4RKQKPX",
+        "usage": "APS3-VendedLog-Bytes",
+        "description": "$0.134 per GB of vended logs ingested in Standard log class for the next 20TB - Asia Pacific (Mumbai)",
+        "USD": "0.1340000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "HYGQDT54G4RKQKPX",
+        "usage": "APS3-VendedLog-Bytes",
+        "description": "$0.067 per GB of vended logs ingested in Standard log class over 50TB - Asia Pacific (Mumbai)",
+        "USD": "0.0670000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "VE63M6QDRWUAS2VN",
+        "usage": "Global-CW:Requests",
+        "description": "Global",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "JBQP6QEETS2BK5DQ",
+        "usage": "APS3-DataProcessing-Bytes",
+        "description": "$0.67 per GB custom log data ingested in Standard log class - Asia Pacific (Mumbai)",
+        "USD": "0.6700000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QEJWX24JGJ2RM797",
+        "usage": "APS3-CW:ObservationUsage",
+        "description": "$0.21 per M observations ingested for the first 1B observations - Asia Pacific (Mumbai)",
+        "USD": "0.0000002100",
+        "unit": "Observations",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QEJWX24JGJ2RM797",
+        "usage": "APS3-CW:ObservationUsage",
+        "description": "$0.18 per M observations ingested for the next 3B observations - Asia Pacific (Mumbai)",
+        "USD": "0.0000001800",
+        "unit": "Observations",
+        "beginRange": "1000000000"
+      },
+      {
+        "sku": "QEJWX24JGJ2RM797",
+        "usage": "APS3-CW:ObservationUsage",
+        "description": "$0.10 per M observations ingested for over 4B observations - Asia Pacific (Mumbai)",
+        "USD": "0.0000001000",
+        "unit": "Observations",
+        "beginRange": "4000000000"
+      },
+      {
+        "sku": "JV2PKUMJNZBBTB39",
+        "usage": "APS3-CW:PromQLAlarmMonitorUsage",
+        "description": "$0.10 per Alarm in Asia Pacific (Mumbai)",
+        "USD": "0.1000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EPN8XQQ6DVPYXUQT",
+        "usage": "APS3-VendedLog-Bytes-WAFLogs",
+        "description": "$0.67 per GB for the first 10TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.6700000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EPN8XQQ6DVPYXUQT",
+        "usage": "APS3-VendedLog-Bytes-WAFLogs",
+        "description": "$0.335 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.3350000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "EPN8XQQ6DVPYXUQT",
+        "usage": "APS3-VendedLog-Bytes-WAFLogs",
+        "description": "$0.134 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.1340000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "EPN8XQQ6DVPYXUQT",
+        "usage": "APS3-VendedLog-Bytes-WAFLogs",
+        "description": "$0.067 per GB for over 50TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.0670000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "FCH8WPMWVXA4B6VM",
+        "usage": "Global-CW:AlarmMonitorUsage",
+        "description": "Global",
+        "USD": "0.0000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "KUX2EBKKTNC345CW",
+        "usage": "APS3-CW:GMWI-Metrics",
+        "description": "$0.02 per 1,000 metrics requested using GetMetricWidgetImage API - Asia Pacific (Mumbai)",
+        "USD": "0.0000200000",
+        "unit": "Metrics",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M9PG5USRE2QBB6FU",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.03 per GB-mo of log storage - Asia Pacific (Mumbai)",
+        "USD": "0.0300000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "WWDS9PE2PZJ2ZBNA",
+        "usage": "APS3-TimedStorage-AIA-ByteHrs",
+        "description": "$0.006 per GB-Mo for TimedStorage-AIA-ByteHrs in Asia Pacific (Mumbai)",
+        "USD": "0.0060000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TGVXFG4CFEHZXFYE",
+        "usage": "APS3-VendedLog-Bytes-CFLogs",
+        "description": "$0.50 per GB of CloudFront vended logs ingested in Standard log class for the first 10TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.5000000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TGVXFG4CFEHZXFYE",
+        "usage": "APS3-VendedLog-Bytes-CFLogs",
+        "description": "$0.25 per GB of CloudFront vended logs ingested in Standard log class for the next 20TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.2500000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "TGVXFG4CFEHZXFYE",
+        "usage": "APS3-VendedLog-Bytes-CFLogs",
+        "description": "$0.10 per GB of CloudFront vended logs ingested in Standard log class for the next 20TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.1000000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "TGVXFG4CFEHZXFYE",
+        "usage": "APS3-VendedLog-Bytes-CFLogs",
+        "description": "$0.05 per GB of CloudFront vended logs ingested in Standard log class over 50TB  -  Asia Pacific (Mumbai)",
+        "USD": "0.0500000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "KZH3YQDT7PXYHAP9",
+        "usage": "APS3-CW:GIRR-Metrics",
+        "description": "$0.01 per 1,000 metrics requested using GetInsightRuleReport API - Asia Pacific (Mumbai)",
+        "USD": "0.0000100000",
+        "unit": "Metrics",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HRYXJVN65A6KJ6Z7",
+        "usage": "APS3-CW:LogAlarmMonitorUsage",
+        "description": "$0.10 per Alarm in Asia Pacific (Mumbai)",
+        "USD": "0.1000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "MNVMG4TMEMJ4HGS2",
+        "usage": "APS3-CW:MetricInsightAlarmUsage",
+        "description": "$0.10 per metric analyzed by the alarm per month",
+        "USD": "0.1000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "CSGBV4W9T8H57R9C",
+        "usage": "APS3-Application-Signals-Bytes",
+        "description": "$0.35 per GB of Application Signals data ingested for the first 10TB - Asia Pacific (Mumbai)",
+        "USD": "0.3500000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "CSGBV4W9T8H57R9C",
+        "usage": "APS3-Application-Signals-Bytes",
+        "description": "$0.20 per GB of Application Signals data ingested for the next 20TB - Asia Pacific (Mumbai)",
+        "USD": "0.2000000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "CSGBV4W9T8H57R9C",
+        "usage": "APS3-Application-Signals-Bytes",
+        "description": "$0.15 per GB of Application Signals data ingested for over 30TB - Asia Pacific (Mumbai)",
+        "USD": "0.1500000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "F3YY5GF4V4PF6WRW",
+        "usage": "APS3-VendedLog-Bytes-MTLogs",
+        "description": "$0.50 per GB for the first 10TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.5000000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "F3YY5GF4V4PF6WRW",
+        "usage": "APS3-VendedLog-Bytes-MTLogs",
+        "description": "$0.25 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.2500000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "F3YY5GF4V4PF6WRW",
+        "usage": "APS3-VendedLog-Bytes-MTLogs",
+        "description": "$0.10 per GB for the next 20TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.1000000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "F3YY5GF4V4PF6WRW",
+        "usage": "APS3-VendedLog-Bytes-MTLogs",
+        "description": "$0.05 per GB for over 50TB of vended log data ingested to CloudWatch logs per month in Asia Pacific (Mumbai)",
+        "USD": "0.0500000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "MBFPHE42AKJWSCZH",
+        "usage": "APS3-CW:AlarmMonitorUsage",
+        "description": "$0.10 per alarm metric month (standard resolution) - Asia Pacific (Mumbai)",
+        "USD": "0.1000000000",
+        "unit": "Alarms",
+        "beginRange": "0"
+      },
+      {
+        "sku": "6YXWM6VW5RNR9ZA7",
+        "usage": "APS3-CW:Requests",
+        "description": "$0.01 per 1,000 requests",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "Q66QSYMRQMGM69RZ",
+        "usage": "APS3-VendedLogIA-Bytes",
+        "description": "$0.335 per GB of vended logs ingested in Infrequent Access log class for the first 10TB - Asia Pacific (Mumbai)",
+        "USD": "0.3350000000",
+        "unit": "GB",
+        "beginRange": "0"
+      },
+      {
+        "sku": "Q66QSYMRQMGM69RZ",
+        "usage": "APS3-VendedLogIA-Bytes",
+        "description": "$0.201 per GB of vended logs ingested in Infrequent Access log class for the next 20TB - Asia Pacific (Mumbai)",
+        "USD": "0.2010000000",
+        "unit": "GB",
+        "beginRange": "10240"
+      },
+      {
+        "sku": "Q66QSYMRQMGM69RZ",
+        "usage": "APS3-VendedLogIA-Bytes",
+        "description": "$0.101 per GB of vended logs ingested in Infrequent Access log class for the next 20TB - Asia Pacific (Mumbai)",
+        "USD": "0.1010000000",
+        "unit": "GB",
+        "beginRange": "30720"
+      },
+      {
+        "sku": "Q66QSYMRQMGM69RZ",
+        "usage": "APS3-VendedLogIA-Bytes",
+        "description": "$0.067 per GB of vended logs ingested in Infrequent Access log class over 50TB - Asia Pacific (Mumbai)",
+        "USD": "0.0670000000",
+        "unit": "GB",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "6XTVPDAM3VF25UTA",
+        "usage": "Global-TimedStorage-ByteHrs",
+        "description": "Global",
+        "USD": "0.0000000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "GSFRH4HQBYGZGH66",
+        "usage": "APS3-CW:GMD-Metrics",
+        "description": "$0.01 per 1,000 metrics requested using GetMetricData API - Asia Pacific (Mumbai)",
+        "USD": "0.0000100000",
+        "unit": "Metrics",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ZQM53HG8BZ5XNN4P",
+        "usage": "APS3-TimedStorage-IA-ByteHrs",
+        "description": "$0.018 per GB-Mo for TimedStorage-IA-ByteHrs in Asia Pacific (Mumbai)",
+        "USD": "0.0180000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "3YB7X822BH75JRG8",
+        "usage": "APS3-DataProcessingIA-Bytes",
+        "description": "$0.335 per GB custom log data ingested in Infrequent Access log class -Asia Pacific (Mumbai)",
+        "USD": "0.3350000000",
+        "unit": "GB",
+        "beginRange": "0"
+      }
+    ]
+  },
+  {
+    "service": "AmazonCognito",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCognito/current/ap-south-1/index.json",
+    "publicationDate": "2026-09-25T19:31:08Z",
+    "rates": [
+      {
+        "sku": "QBQCRHYTWZMMHZKH",
+        "usage": "APS3-CognitoPlusMRRMAU",
+        "description": "Cognito Plus multi-region-replication add-on ap-south-1 tier 1 pricing",
+        "USD": "0.0060000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "NJAHSREV5A9QYTGN",
+        "usage": "APS3-CognitoEssentialsMRRMAU",
+        "description": "Cognito Essentials multi-region-replication add-on ap-south-1 tier 1 pricing",
+        "USD": "0.0045000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "SS63SQ6T3Y6ASC3Q",
+        "usage": "APS3-CognitoEssentialsMAU",
+        "description": "Cognito Essentials ap-south-1 tier 1 pricing",
+        "USD": "0.0150000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "KVJRUMCB5NDEHVVB",
+        "usage": "APS3-CUPM2MTokenRequestsFree",
+        "description": "USD 0.00 per client credential flow (M2M) token request in tier 1  in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "0"
+      },
+      {
+        "sku": "KVJRUMCB5NDEHVVB",
+        "usage": "APS3-CUPM2MTokenRequestsFree",
+        "description": "USD 0.00 per client credential flow (M2M) token request in tier 2  in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "250000"
+      },
+      {
+        "sku": "KVJRUMCB5NDEHVVB",
+        "usage": "APS3-CUPM2MTokenRequestsFree",
+        "description": "USD 0.00 per client credential flow (M2M) token request in tier 3  in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "5000000"
+      },
+      {
+        "sku": "2SHDBZKW7FZNTFCS",
+        "usage": "APS3-CUPM2MTokenRequestsFull",
+        "description": "USD 0.00225 per client credential flow (M2M) token request in tier 1  in Asia Pacific (Mumbai)",
+        "USD": "0.0022500000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "0"
+      },
+      {
+        "sku": "2SHDBZKW7FZNTFCS",
+        "usage": "APS3-CUPM2MTokenRequestsFull",
+        "description": "USD 0.0015 per client credential flow (M2M) token request in tier 2  in Asia Pacific (Mumbai)",
+        "USD": "0.0015000000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "250000"
+      },
+      {
+        "sku": "2SHDBZKW7FZNTFCS",
+        "usage": "APS3-CUPM2MTokenRequestsFull",
+        "description": "USD 0.001125 per client credential flow (M2M) token request in tier 3  in Asia Pacific (Mumbai)",
+        "USD": "0.0011250000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "5000000"
+      },
+      {
+        "sku": "YZZRGFGGZZPMR92V",
+        "usage": "APS3-CognitoLiteMAU",
+        "description": "Cognito Lite ap-south-1 tier 1 pricing",
+        "USD": "0.0055000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "YZZRGFGGZZPMR92V",
+        "usage": "APS3-CognitoLiteMAU",
+        "description": "Cognito Lite ap-south-1 tier 2 pricing",
+        "USD": "0.0046000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "90000"
+      },
+      {
+        "sku": "YZZRGFGGZZPMR92V",
+        "usage": "APS3-CognitoLiteMAU",
+        "description": "Cognito Lite ap-south-1 tier 3 pricing",
+        "USD": "0.0032500000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "990000"
+      },
+      {
+        "sku": "YZZRGFGGZZPMR92V",
+        "usage": "APS3-CognitoLiteMAU",
+        "description": "Cognito Lite ap-south-1 tier 4 pricing",
+        "USD": "0.0025000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "9990000"
+      },
+      {
+        "sku": "2CYMAGD6425A4UZG",
+        "usage": "APS3-Bedrock-Agent-Core:Auth-Request:Oauth2",
+        "description": "$0.00001 per Request for Bedrock-Agent-Core:Auth-Request:Oauth2 in Asia Pacific (Mumbai)",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M4E9VF6G2S7ZVZEU",
+        "usage": "APS3-CognitoASFMAU",
+        "description": "Cognito User Pools ap-south-1 advanced security features users tier 1 pricing",
+        "USD": "0.0500000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M4E9VF6G2S7ZVZEU",
+        "usage": "APS3-CognitoASFMAU",
+        "description": "Cognito User Pools ap-south-1 advanced security features users tier 2 pricing",
+        "USD": "0.0350000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "50000"
+      },
+      {
+        "sku": "M4E9VF6G2S7ZVZEU",
+        "usage": "APS3-CognitoASFMAU",
+        "description": "Cognito User Pools ap-south-1 advanced security features users tier 3 pricing",
+        "USD": "0.0200000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "100000"
+      },
+      {
+        "sku": "M4E9VF6G2S7ZVZEU",
+        "usage": "APS3-CognitoASFMAU",
+        "description": "Cognito User Pools ap-south-1 advanced security features users tier 4 pricing",
+        "USD": "0.0150000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "1000000"
+      },
+      {
+        "sku": "M4E9VF6G2S7ZVZEU",
+        "usage": "APS3-CognitoASFMAU",
+        "description": "Cognito User Pools ap-south-1 advanced security features users tier 5 pricing",
+        "USD": "0.0100000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "10000000"
+      },
+      {
+        "sku": "VXYNNYVR5T685Y53",
+        "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+        "description": "$0.002925 per multi-region-replication client credential flow (M2M) token requests in tier 1 in Asia Pacific (Mumbai)",
+        "USD": "0.0029250000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "0"
+      },
+      {
+        "sku": "VXYNNYVR5T685Y53",
+        "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+        "description": "$0.00195 per multi-region-replication client credential flow (M2M) token requests in tier 2 in Asia Pacific (Mumbai)",
+        "USD": "0.0019500000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "250000"
+      },
+      {
+        "sku": "VXYNNYVR5T685Y53",
+        "usage": "APS3-CUPM2MTokenRequestsMRRFull",
+        "description": "$0.0014625 per multi-region-replication client credential flow (M2M) token requests in tier 3 in Asia Pacific (Mumbai)",
+        "USD": "0.0014625000",
+        "unit": "CognitoUserPools-M2MTokens",
+        "beginRange": "5000000"
+      },
+      {
+        "sku": "SJDJQB52YRYNVHRN",
+        "usage": "APS3-CognitoUserPoolsMAU",
+        "description": "Cognito User Pools ap-south-1 tier 1 pricing",
+        "USD": "0.0055000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "SJDJQB52YRYNVHRN",
+        "usage": "APS3-CognitoUserPoolsMAU",
+        "description": "Cognito User Pools ap-south-1 tier 2 pricing",
+        "USD": "0.0046000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "50000"
+      },
+      {
+        "sku": "SJDJQB52YRYNVHRN",
+        "usage": "APS3-CognitoUserPoolsMAU",
+        "description": "Cognito User Pools ap-south-1 tier 3 pricing",
+        "USD": "0.0032500000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "950000"
+      },
+      {
+        "sku": "SJDJQB52YRYNVHRN",
+        "usage": "APS3-CognitoUserPoolsMAU",
+        "description": "Cognito User Pools ap-south-1 tier 4 pricing",
+        "USD": "0.0025000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "9950000"
+      },
+      {
+        "sku": "D2N3DJ2QT3A8DEX7",
+        "usage": "APS3-CognitoPlusMAU",
+        "description": "Cognito Plus ap-south-1 tier 1 pricing",
+        "USD": "0.0200000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "5CNZF82JRTXMWNC7",
+        "usage": "APS3-CognitoEnterpriseMAU",
+        "description": "Cognito User Pools ap-south-1 enterprise users tier 1 pricing",
+        "USD": "0.0150000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "AH8UFFURUFH2VCD9",
+        "usage": "Global-CognitoFreeTierMAU",
+        "description": "Cognito  global free tier pricing",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EY9QB3PMSYTP6DZ2",
+        "usage": "Globalv1-CognitoEnterpriseMAU",
+        "description": "Cognito User Pools global enterprise users free tier pricing",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      },
+      {
+        "sku": "KDAK2P7NQ8QSNKWA",
+        "usage": "APS3-Bedrock-Agent-Core:Auth-Request:API-Keys",
+        "description": "$0.00001 per Request for Bedrock-Agent-Core:Auth-Request:API-Keys in Asia Pacific (Mumbai)",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "JRGNUYCVEBKA6U9J",
+        "usage": "Global-CognitoUserPoolMAU",
+        "description": "Cognito User Pools global free tier pricing",
+        "USD": "0.0000000000",
+        "unit": "CognitoUserPoolsMAU",
+        "beginRange": "0"
+      }
+    ]
+  },
+  {
+    "service": "AmazonS3",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-15T17:35:40Z",
+    "rates": [
+      {
+        "sku": "D5HDM52GMFRTENR3",
+        "usage": "APS3-Requests-SIA-Tier1",
+        "description": "$0.01 per 1,000 PUT, COPY, POST or LIST requests to Standard-Infrequent Access",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "USGUTP2JY23N9GH2",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.025 per GB - first 50 TB / month of storage used",
+        "USD": "0.0250000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "USGUTP2JY23N9GH2",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.024 per GB - next 450 TB / month of storage used",
+        "USD": "0.0240000000",
+        "unit": "GB-Mo",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "USGUTP2JY23N9GH2",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "description": "$0.023 per GB - storage used / month over 500 TB",
+        "USD": "0.0230000000",
+        "unit": "GB-Mo",
+        "beginRange": "512000"
+      },
+      {
+        "sku": "J4EYZP54VMPUZCXH",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 InitiateMultipartUpload for Replication to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "VX9UGJWVDM76ST9R",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 PutObject requests to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "H3XS6Q5BMA54V52U",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 CopyPart to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "JNKX9258QPSA7BYM",
+        "usage": "APS3-Requests-INT-Tier1",
+        "description": "$0.005 per 1,000 PUT, COPY, POST, or LIST requests to Intelligent-Tiering",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "2YVKJWZFWAWCFPBM",
+        "usage": "APS3-AdditionalRequest-INT",
+        "description": "$0.0004 per 1,000 Requests for AdditionalRequest-INT:RestoreObject in Asia Pacific (Mumbai)",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M255GET6BCZAF7ET",
+        "usage": "APS3-Requests-INT-Tier2",
+        "description": "$0.004 per 10,000 GET and all other requests to Intelligent-Tiering",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TNYSZ8U7HBNSQNYK",
+        "usage": "APS3-Requests-ZIA-Tier1",
+        "description": "$0.01 per 1,000 PUT, COPY, POST or LIST requests to One Zone-Infrequent Access",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "3MPYG89WMA5RWBVR",
+        "usage": "APS3-Requests-XZ-Tier2",
+        "description": "$0.00003 per 1,000 GET and All Other Requests to Express One Zone",
+        "USD": "0.0000000300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "XWN3MZVMD3TF2UDC",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 UpdateAGLocation requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ACY8DBZ6UYTP6EGR",
+        "usage": "APS3-TimedStorage-ZIA-SmObjects",
+        "description": "$0.011 per GB-Month of storage used for small objects",
+        "USD": "0.0110000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M8JS4M6VCMNRTCUD",
+        "usage": "APS3-Requests-INT-DAA-Tier5",
+        "description": "$0.0 per API Requests for Requests-INT-DAA-Tier5:RestoreObjectBulk in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "API Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "Q7XFXXU77Z4GHV3F",
+        "usage": "APS3-TimedStorage-SIA-SmObjects",
+        "description": "$0.0138 per GB-Month of storage used for small objects",
+        "USD": "0.0138000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "P3PJHF8JWK2MXD7V",
+        "usage": "APS3-Requests-INT-DAA-Tier3",
+        "description": "$0.0 per Requests for Requests-INT-DAA-Tier3:RestoreObject in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "DU2276E5P4TAGGQT",
+        "usage": "APS3-Tables-TimedStorage-ByteHrs",
+        "description": "$0.0288 per GB-Mo for First 50 TB of Storage in S3 Table Buckets ",
+        "USD": "0.0288000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "DU2276E5P4TAGGQT",
+        "usage": "APS3-Tables-TimedStorage-ByteHrs",
+        "description": "$0.0276 per GB-Mo for Next 450 TB of Storage in S3 Table Buckets ",
+        "USD": "0.0276000000",
+        "unit": "GB-Mo",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "DU2276E5P4TAGGQT",
+        "usage": "APS3-Tables-TimedStorage-ByteHrs",
+        "description": "$0.0265 per GB-Mo for Over 500 TB of Storage in S3 Table Buckets ",
+        "USD": "0.0265000000",
+        "unit": "GB-Mo",
+        "beginRange": "512000"
+      },
+      {
+        "sku": "V77WC7TPCH6VPBGY",
+        "usage": "APS3-TimedStorage-INT-AIA-ByteHrs",
+        "description": "$0.005 per GB-Month of storage used in Intelligent-Tiering, Archive Instant Access tier",
+        "USD": "0.0050000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "F298EBCJ6FKNRG5V",
+        "usage": "APS3-Requests-GLACIER-Tier2",
+        "description": "$0.004 per 10,000 GET and all other requests from Glacier",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "FBH2GH56TABEKX79",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 CompleteMultipartUpload for Replication to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "9KXDFVNW23Y4X95D",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.00 per 1,000 DeleteAGLocation requests for S3 Access Grants",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "RTE3RF2QGM33J8VB",
+        "usage": "APS3-Requests-Tier6",
+        "description": "$0.012 per Expedited Glacier request",
+        "USD": "0.0120000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "9QNM268K9XPTKKFV",
+        "usage": "APS3-Requests-Tier3",
+        "description": "$0.06 per 1,000 Glacier Requests",
+        "USD": "0.0000600000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "MDDK4BTVFFXS6P84",
+        "usage": "APS3-TimedStorage-INT-IA-ByteHrs",
+        "description": "$0.0138 per GB-Month of storage used in Intelligent-Tiering, Infrequent Access Tier",
+        "USD": "0.0138000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "K8ASTGRMTN3CG2A8",
+        "usage": "APS3-TimedStorage-SIA-ByteHrs",
+        "description": "$0.0138 per GB-Month of storage used in Standard-Infrequent Access",
+        "USD": "0.0138000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "5XBHQPE3ZWSV5YK3",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 PUT for Replication to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "2BPHYHM7PFCUYV42",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.00 per 1,000 DeleteAGGrant requests for S3 Access Grants",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "DJ4BJENUUMZD8XNR",
+        "usage": "APS3-Requests-Annotation-Tier2",
+        "description": "$0.0004 per 1,000 Tier2 Annotation Requests",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "2VJYQ46GFW9CGXQD",
+        "usage": "APS3-Vectors-TimedStorage-ByteHrs",
+        "description": "$0.066 per GB-Mo of Storage in Vectors ",
+        "USD": "0.0660000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "4G5YFFZTEFRNDM38",
+        "usage": "APS3-Requests-INT-Tier6",
+        "description": "$0.012 per request for INT-AA Expedited requests in Asia Pacific (Mumbai)",
+        "USD": "0.0120000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "JMZB4CJ5ZS2JT98X",
+        "usage": "APS3-TimedStorage-XZ-ByteHrs",
+        "description": "$0.124 per GB-Mo of Storage in Express One Zone ",
+        "USD": "0.1240000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "5JHAQFM2E98HCCXV",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 ListAGCallerGrants requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "BMQCQ7RSGD8K3F8G",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 CreateAGInstancePolicy requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "UN9KNDE43X56M2KU",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAG requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EW4QQWM78DXVN66M",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.00 per 1,000 DeleteAGInstancePolicy requests for S3 Access Grants",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "AT3GA359HGYUQVVB",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAGGrant requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "YMDHFHPHKM7A4UCT",
+        "usage": "APS3-Tables-TimedStorage-INT-IA-ByteHrs",
+        "description": "$0.0159 per GB-Mo of Storage in Tables-INT-IA ",
+        "USD": "0.0159000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QQPWQPDD3JSKWZ7S",
+        "usage": "APS3-Requests-Tier3",
+        "description": "$0.036 per 1,000 Glacier Requests",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HSRFVJ6BJM6EADDD",
+        "usage": "APS3-Requests-Tier4",
+        "description": "$0.01 per 1,000 transitions to Intelligent Tiering",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "A9HVKJPA6VNKYBXN",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 InitiateMultipartUpload requests to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "3VRAWZV6P4K96PJK",
+        "usage": "APS3-Requests-XZ-Tier1",
+        "description": "$0.00113 per 1,000 PUT Requests/COPY/POST or LIST Requests to Express One Zone",
+        "USD": "0.0000011300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "CHWMCNFQ7GJW66HG",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 PUT for Replication Time Control to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "S8YS8ANP72AG2SSY",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 InitiateMultipartUpload for Replication Time Control to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "46KBGQ5XPY8DA7ZH",
+        "usage": "APS3-TimedStorage-GlacierByteHrs",
+        "description": "$0.0045 per GB / month of storage used - Amazon Glacier",
+        "USD": "0.0045000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "DY8YP8JN2PCMXWBQ",
+        "usage": "APS3-Files-TimedStorage-ByteHrs",
+        "description": "$0.33 per GB-Mo of Storage in Files ",
+        "USD": "0.3300000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "H6AM24ZXRUAGQUQK",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 CreateAGInstance requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "Z69YT3SZAT7TUJWX",
+        "usage": "APS3-Tables-Requests-Tier2",
+        "description": "$0.0004 per 1,000 GET and All Other Requests to S3 Table Buckets",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "R9J288Y97AXMT5ZG",
+        "usage": "APS3-TimedStorage-INT-AA-ByteHrs",
+        "description": "$0.0045 per Gigabyte Month for TimedStorage-INT-AA-ByteHrs:IntelligentTieringAAStorage in Asia Pacific (Mumbai)",
+        "USD": "0.0045000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "SF3QQQMZGA3PPF33",
+        "usage": "APS3-Requests-Tier2",
+        "description": "$0.004 per 10,000 GET and all other requests",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "58NWGKC6NSDFRAPN",
+        "usage": "APS3-Requests-Tier5",
+        "description": "$0.00 per 1,000 - Bulk Glacier requests",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "9PDXBPMVKGWD2QDB",
+        "usage": "APS3-TimedStorage-INT-DAA-ByteHrs",
+        "description": "$0.002 per Gigabyte Month for TimedStorage-INT-DAA-ByteHrs:IntelligentTieringDAAStorage in Asia Pacific (Mumbai)",
+        "USD": "0.0020000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "REMQ2HQUMS6RKJGA",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAGLocation requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EBXH7VNVWDHCG4K2",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 PostObject requests to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "9AX82Z5SZ4Q32BZR",
+        "usage": "APS3-Requests-Tier4",
+        "description": "$0.01 per 1,000 transitions to One Zone-Infrequent Access",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ECYAYCXPQ7C9JEHU",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 ListAGLocations requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "8GEBE3SWP27TC4F8",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 ListAGGrants requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "A274G2NG77XPFYMW",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 CompleteMultipartUpload for Replication Time Control to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "BNHTNHKRJ48KT4WU",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 CopyObject requests to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "U9PJNZRQM8EVZYRY",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.036 per 1,000 CompleteMultipartUpload requests to Glacier",
+        "USD": "0.0000360000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QWPU92K2MGX4KM6U",
+        "usage": "APS3-Requests-BACKUP-Tier1",
+        "description": "$0.00113 per 1,000 PUT Requests/COPY/POST or LIST Requests to AWS Backup",
+        "USD": "0.0000011300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "SYQH8DDABTCHME86",
+        "usage": "APS3-Requests-GIR-Tier1",
+        "description": "$0.02 per 1,000 PUT, COPY, POST or LIST requests to Glacier Instant Retrieval",
+        "USD": "0.0000200000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "8EF96DBUU573BSER",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 CreateAGIdC requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "7S774XDZGKQETMU5",
+        "usage": "APS3-TimedStorage-GlacierStaging",
+        "description": "$0.023 per GB-Month of storage used in GlacierStagingStorage",
+        "USD": "0.0230000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "GNCRCC5WCZRUT62T",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 UploadPart requests to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "MDUUA47MWEBP2DZ6",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAGDataAccess requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "AJ4CNK4XMMYZ7APV",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 ListAGs requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TYQXHN9WTAX937NN",
+        "usage": "APS3-Tables-Requests-Tier1",
+        "description": "$0.005 per 1,000 PUT Requests/COPY/POST or LIST Requests to S3 Table Buckets",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "NEZMXX97CSPPBVCA",
+        "usage": "APS3-TimedStorage-GIR-SmObjects",
+        "description": "$0.005 per GB-Month of storage used for small objects",
+        "USD": "0.0050000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "M97UGJ6ZT8Z7ET7U",
+        "usage": "APS3-Requests-FSXONTAP-Tier2",
+        "description": "$0.00003 per 1,000 GET and All Other Requests to FSx for ONTAP",
+        "USD": "0.0000000300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "H35VNXQRRU2NMJCD",
+        "usage": "APS3-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.025 per GB - first 50 TB / month of storage used in Intelligent-Tiering, Frequent Access Tier",
+        "USD": "0.0250000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "H35VNXQRRU2NMJCD",
+        "usage": "APS3-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.024 per GB - next 450 TB / month of storage used in Intelligent-Tiering, Frequent Access Tier",
+        "USD": "0.0240000000",
+        "unit": "GB-Mo",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "H35VNXQRRU2NMJCD",
+        "usage": "APS3-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.023 per GB - over 500 TB / month of storage used in Intelligent-Tiering, Frequent Access Tier",
+        "USD": "0.0230000000",
+        "unit": "GB-Mo",
+        "beginRange": "512000"
+      },
+      {
+        "sku": "Z2TY8ZE6MT9H9UUZ",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 UploadPart for Replication to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "TJGEUUU53ZDX2CM9",
+        "usage": "APS3-Requests-ZIA-Tier2",
+        "description": "$0.01 per 10,000 GET and all other requests  to One Zone-Infrequent Access",
+        "USD": "0.0000010000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "WB8AT952ZCJE7EB9",
+        "usage": "APS3-Vectors-Request-Tier1",
+        "description": "$0.06 per 1,000 Tier1 Vectors API Requests",
+        "USD": "0.0000600000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EVFJKBXHZE37NM2T",
+        "usage": "APS3-Tables-Requests-INT-Tier1",
+        "description": "$0.005 per 1,000 PUT Requests/COPY/POST Requests to Tables INT",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PEUDYAVJEGE228ET",
+        "usage": "APS3-Requests-Annotation-Tier1",
+        "description": "$0.005 per 1,000 Tier1 Annotation Requests",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "D7AVX5W42CKYFX8A",
+        "usage": "APS3-Requests-BACKUP-Tier2",
+        "description": "$0.00003 per 1,000 GET and All Other Requests to AWS Backup",
+        "USD": "0.0000000300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "2PS55GD34VFV8ZJ2",
+        "usage": "APS3-Requests-Tier3",
+        "description": "$0.07 per 1,000 Lifecycle requests to Glacier Deep Archive in Asia Pacific (Mumbai)",
+        "USD": "0.0000700000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "ZQW4KJ8GCTSYRY7Q",
+        "usage": "APS3-Requests-GDA-Tier2",
+        "description": "$0.004 per 10,000 GET and all other requests from Glacier",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "7Q85W9PA222KFCGN",
+        "usage": "APS3-Vectors-Request-Tier2",
+        "description": "$0.06 per 1,000 Tier2 Vectors API Requests",
+        "USD": "0.0000600000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "44RWV623NRXB7A7K",
+        "usage": "APS3-TimedStorage-GDA-Staging",
+        "description": "$0.023 per GB-Month of storage used in GlacierStagingStorage",
+        "USD": "0.0230000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "W7W65N5FQXR5MWV9",
+        "usage": "APS3-Tables-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.0288 per GB-Mo for First 50 TB of Storage in Tables-INT-FA ",
+        "USD": "0.0288000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "W7W65N5FQXR5MWV9",
+        "usage": "APS3-Tables-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.0276 per GB-Mo for Next 450 TB of Storage in Tables-INT-FA ",
+        "USD": "0.0276000000",
+        "unit": "GB-Mo",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "W7W65N5FQXR5MWV9",
+        "usage": "APS3-Tables-TimedStorage-INT-FA-ByteHrs",
+        "description": "$0.0265 per GB-Mo for Over 500 TB of Storage in Tables-INT-FA ",
+        "USD": "0.0265000000",
+        "unit": "GB-Mo",
+        "beginRange": "512000"
+      },
+      {
+        "sku": "SC5UTV955RP7JXZ4",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAGInstancePolicy requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "D9M8ZYWAWGZBW8JR",
+        "usage": "APS3-TimedStorage-ZIA-ByteHrs",
+        "description": "$0.0110 per GB-Month of storage used in One Zone-Infrequent Access",
+        "USD": "0.0110000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "GQ5H4F8YXB4UFE66",
+        "usage": "APS3-Tables-TimedStorage-INT-AIA-ByteHrs",
+        "description": "$0.0058 per GB-Mo of Storage in Tables-INT-AIA ",
+        "USD": "0.0058000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "WKBXHNE7R6TUR92S",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 CreateAGGrant requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "HU78A4N5STMPRP2Z",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.00 per 1,000 DeleteAG requests for S3 Access Grants",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PXR2R2QKPK5D4B5H",
+        "usage": "APS3-Requests-GIR-Tier2",
+        "description": "$0.1 per 10,000 GET and all other requests to Glacier Instant Retrieval",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "5ACXG44VSMEDQRKW",
+        "usage": "APS3-Requests-INT-AA-Tier3",
+        "description": "$0.0 per Requests for Requests-INT-AA-Tier3:RestoreObject in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0240 per GB - first 1 TB / month of storage used - Reduced Redundancy Storage",
+        "USD": "0.0240000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0236 per GB - next 49 TB / month of storage used - Reduced Redundancy Storage",
+        "USD": "0.0236000000",
+        "unit": "GB-Mo",
+        "beginRange": "1024"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0232 per GB - next 450 TB / month of storage used - Reduced Redundancy Storage",
+        "USD": "0.0232000000",
+        "unit": "GB-Mo",
+        "beginRange": "51200"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0228 per GB - next 500 TB / month of storage used - Reduced Redundancy Storage",
+        "USD": "0.0228000000",
+        "unit": "GB-Mo",
+        "beginRange": "512000"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0224 per GB - next 4000 TB / month of storage used - Reduced Redundancy Storage",
+        "USD": "0.0224000000",
+        "unit": "GB-Mo",
+        "beginRange": "1024000"
+      },
+      {
+        "sku": "G3ZAFG4XZUNWMPW5",
+        "usage": "APS3-TimedStorage-RRS-ByteHrs",
+        "description": "$0.0220 per GB - storage used /  month over 5000 TB - Reduced Redundancy Storage",
+        "USD": "0.0220000000",
+        "unit": "GB-Mo",
+        "beginRange": "5120000"
+      },
+      {
+        "sku": "H8UPR7HTUNKZRCK2",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 GetAGInstanceForPrefix requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "NRB9DU2F4WWXSP3R",
+        "usage": "APS3-TimedStorage-GIR-ByteHrs",
+        "description": "$0.005 per GB-Month of storage used in Glacier Instant Retrieval",
+        "USD": "0.0050000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      },
+      {
+        "sku": "T5S4D2WR8UCJYUE5",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.03 per 1,000 CreateAGLocation requests for S3 Access Grants",
+        "USD": "0.0000300000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "EQ6JHPEWW4GB64C7",
+        "usage": "APS3-Vectors-Request-Tier3",
+        "description": "$0.0027 per 1,000 Query Vectors API Requests",
+        "USD": "0.0000027000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QK35AYAWNNZG3ACT",
+        "usage": "APS3-Requests-Tier8",
+        "description": "$0.00 per 1,000 DeleteAGIdC requests for S3 Access Grants",
+        "USD": "0.0000000000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "9M9P4R7AMN6SY7TK",
+        "usage": "APS3-Tables-Requests-INT-Tier2",
+        "description": "$0.0004 per 1,000 GET and All Other Requests to Tables INT",
+        "USD": "0.0000004000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "FRN7GAWSZ8NQKG49",
+        "usage": "APS3-Requests-INT-AA-Tier5",
+        "description": "$0.0 per API Requests for Requests-INT-AA-Tier5:RestoreObjectBulk in Asia Pacific (Mumbai)",
+        "USD": "0.0000000000",
+        "unit": "API Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "MEP92R678J9QXD7F",
+        "usage": "APS3-Requests-Tier4",
+        "description": "$0.02 per 1,000 transitions to Glacier Instant Retrieval",
+        "USD": "0.0000200000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "FPDXKA369UCYA2R5",
+        "usage": "APS3-Requests-GLACIER-Tier1",
+        "description": "$0.005 per 1,000 UploadPart for Replication Time Control to Glacier",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "A5Y6QSQNZBWPW5DP",
+        "usage": "APS3-Requests-SIA-Tier2",
+        "description": "$0.01 per 10,000 GET and all other requests  to Standard-Infrequent Access",
+        "USD": "0.0000010000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "PQECGCN6Y2YF3ACF",
+        "usage": "APS3-Requests-FSXONTAP-Tier1",
+        "description": "$0.00113 per 1,000 PUT Requests/COPY/POST or LIST Requests to FSx for ONTAP",
+        "USD": "0.0000011300",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "UJ844B8DVMQUFJQP",
+        "usage": "APS3-Requests-Tier1",
+        "description": "$0.005 per 1,000 PUT, COPY, POST, or LIST requests",
+        "USD": "0.0000050000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "QYFYX6DVV3AFJAPY",
+        "usage": "APS3-Requests-Tier4",
+        "description": "$0.01 per 1,000 transitions to Standard-Infrequent Access",
+        "USD": "0.0000100000",
+        "unit": "Requests",
+        "beginRange": "0"
+      },
+      {
+        "sku": "BWGYM58849ERMUYT",
+        "usage": "APS3-Annotation-TimedStorage-ByteHrs",
+        "description": "$0.025 per GB-Mo of Storage in Annotations ",
+        "USD": "0.0250000000",
+        "unit": "GB-Mo",
+        "beginRange": "0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "region": "ap-south-1",
+  "currency": "USD",
+  "requests": 60000,
+  "averageDurationSeconds": 0.25,
+  "memoryGB": 0.25,
+  "writeRequestUnits": 60000,
+  "readRequestUnits": 120000,
+  "storageGB": 1,
+  "pitrGB": 1,
+  "secretCount": 4,
+  "logIngestGB": 0,
+  "alarmCount": 0,
+  "outboundGB": 0,
+  "rates": {
+    "apiPerMillion": "1.05",
+    "lambdaPerMillion": "0.20",
+    "lambdaPerGBSecond": "0.0000133334",
+    "writePerMillion": "0.71",
+    "readPerMillion": "0.1425",
+    "storagePerGBMonth": "0.285",
+    "pitrPerGBMonth": "0.228",
+    "secretPerMonth": "0.40",
+    "logPerGB": null,
+    "alarmPerMonth": null,
+    "outboundPerGB": null
+  },
+  "note": "Rates grounded in regional-price-evidence.json. Illustrative requests/capacity/storage, not observed traffic. Storage uses paid-tier rate before allowances. Logs, alarms, transfer and other charges remain unpriced."
+}
