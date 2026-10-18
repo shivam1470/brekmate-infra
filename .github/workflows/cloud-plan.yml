@@ -1,0 +1,45 @@
+name: Manual reviewed cloud plan
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        options: [staging, production]
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  plan:
+    if: vars.CLOUD_PLAN_ENABLED == 'true' && vars.BASELINE_ONLY_ENVIRONMENT == 'true'
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a
+        with:
+          role-to-assume: ${{ vars.AWS_PLAN_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+          allowed-account-ids: ${{ vars.AWS_ACCOUNT_ID }}
+      - name: Install checksum-verified OpenTofu
+        run: python3 scripts/install_tofu.py "$RUNNER_TEMP/tofu-bin"
+      - name: Prepare non-secret reviewed inputs
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+          TARGET_REGION: ${{ vars.AWS_REGION }}
+          STATE_BUCKET: ${{ vars.STATE_BUCKET }}
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,pathlib
+          folder=pathlib.Path(os.environ['RUNNER_TEMP']);env=os.environ['TARGET_ENVIRONMENT'];account=os.environ['AWS_ACCOUNT_ID'];region=os.environ['TARGET_REGION']
+          (folder/'vars.json').write_text(json.dumps({'aws_account_id':account,'environment':env,'region':region,'backend_enabled':False,'web_enabled':False,'worker_enabled':False}))
+          (folder/'backend.json').write_text(json.dumps({'bucket':os.environ['STATE_BUCKET'],'key':env+'/terraform.tfstate','region':region,'encrypt':True,'use_lockfile':True,'allowed_account_ids':[account]}))
+          PYCODE
+      - name: Plan only; never apply
+        env:
+          TARGET_ENVIRONMENT: ${{ inputs.environment }}
+          TOFU_BIN: ${{ runner.temp }}/tofu-bin/tofu
+        run: python3 scripts/plan.py "$TARGET_ENVIRONMENT" --vars "$RUNNER_TEMP/vars.json" --backend "$RUNNER_TEMP/backend.json"

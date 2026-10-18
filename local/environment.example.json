@@ -1,0 +1,14 @@
+{
+  "AWS_REGION": "ap-south-1",
+  "AWS_ACCESS_KEY_ID": "localonly",
+  "AWS_SECRET_ACCESS_KEY": "localonly",
+  "DYNAMODB_ENDPOINT": "http://127.0.0.1:8000",
+  "CORE_TABLE": "brekmate-local-core",
+  "LEDGER_TABLE": "brekmate-local-ledger",
+  "OPERATIONS_TABLE": "brekmate-local-operations",
+  "PAYMENTS_MODE": "stub",
+  "OTP_MODE": "stub",
+  "EMAIL_MODE": "stub",
+  "WHATSAPP_MODE": "manual",
+  "ALLOW_REAL_PROVIDER_CALLS": false
+}

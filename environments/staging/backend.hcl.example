@@ -1,0 +1,6 @@
+bucket = "REPLACE_WITH_BOOTSTRAP_BUCKET"
+key = "staging/terraform.tfstate"
+region = "ap-south-1"
+encrypt = true
+use_lockfile = true
+allowed_account_ids = ["REPLACE_WITH_ACTUAL_ACCOUNT_ID"]

@@ -1,0 +1,164 @@
+[
+  {
+    "service": "AWSLambda",
+    "region": "ap-south-1",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-16T18:23:59Z",
+    "rates": [
+      {
+        "sku": "VPGUBFQ4KNZKMKGJ",
+        "usage": "APS3-Request",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "AWS Lambda - Total Requests - Asia Pacific (Mumbai)",
+        "unit": "Request",
+        "USD": "0.0000002000",
+        "effective": "2026-10-01T00:00:00Z"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "beginRange": "0",
+        "endRange": "7500000000",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-1",
+        "unit": "Lambda-GB-Second",
+        "USD": "0.0000133334",
+        "effective": "2026-10-01T00:00:00Z"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "beginRange": "7500000000",
+        "endRange": "18750000000",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-2",
+        "unit": "Lambda-GB-Second",
+        "USD": "0.0000120001",
+        "effective": "2026-10-01T00:00:00Z"
+      },
+      {
+        "sku": "69Y7TUFYEF9HAV59",
+        "usage": "APS3-Lambda-GB-Second-ARM",
+        "beginRange": "18750000000",
+        "endRange": "Inf",
+        "description": "AWS Lambda - Total Compute for ARM - Asia Pacific (Mumbai)-Tier-3",
+        "unit": "Lambda-GB-Second",
+        "USD": "0.0000106667",
+        "effective": "2026-10-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "service": "AmazonApiGateway",
+    "region": "ap-south-1",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonApiGateway/current/ap-south-1/index.json",
+    "publicationDate": "2026-10-13T00:30:44Z",
+    "rates": [
+      {
+        "sku": "S2BWD3VP3K4M5Q9P",
+        "usage": "APS3-ApiGatewayHttpRequest",
+        "beginRange": "0",
+        "endRange": "300000000",
+        "description": "$1.05/million requests - API Gateway HTTP API (first 300 million)",
+        "unit": "Requests",
+        "USD": "0.0000010500",
+        "effective": "2026-10-01T00:00:00Z"
+      },
+      {
+        "sku": "S2BWD3VP3K4M5Q9P",
+        "usage": "APS3-ApiGatewayHttpRequest",
+        "beginRange": "300000000",
+        "endRange": "Inf",
+        "description": "$0.95/million requests - API Gateway HTTP API (more than 300 million)",
+        "unit": "Requests",
+        "USD": "0.0000009500",
+        "effective": "2026-10-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "service": "AmazonDynamoDB",
+    "region": "ap-south-1",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDynamoDB/current/ap-south-1/index.json",
+    "publicationDate": "2026-09-11T12:44:22Z",
+    "rates": [
+      {
+        "sku": "A5DP2X4YSZ84WEJA",
+        "usage": "APS3-WriteRequestUnits",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "$0.71 per million write request units (Asia Pacific (India))",
+        "unit": "WriteRequestUnits",
+        "USD": "0.0000007100",
+        "effective": "2026-08-01T00:00:00Z"
+      },
+      {
+        "sku": "4QP8CNC65HXP42PN",
+        "usage": "APS3-TimedPITRStorage-ByteHrs",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "$0.228 per GB-Month of storage used for DynamoDB PITR backup",
+        "unit": "GB-Mo",
+        "USD": "0.2280000000",
+        "effective": "2026-08-01T00:00:00Z"
+      },
+      {
+        "sku": "HQZY4ZFUTRDPV7ZE",
+        "usage": "APS3-ReadRequestUnits",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "$0.1425 per million read request units (Asia Pacific (India))",
+        "unit": "ReadRequestUnits",
+        "USD": "0.0000001425",
+        "effective": "2026-08-01T00:00:00Z"
+      },
+      {
+        "sku": "8Q6HK3ASV67MN388",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "beginRange": "0",
+        "endRange": "25",
+        "description": "$0.00 per GB-Month of storage for first 25 free GB-Months",
+        "unit": "GB-Mo",
+        "USD": "0.0000000000",
+        "effective": "2026-08-01T00:00:00Z"
+      },
+      {
+        "sku": "8Q6HK3ASV67MN388",
+        "usage": "APS3-TimedStorage-ByteHrs",
+        "beginRange": "25",
+        "endRange": "Inf",
+        "description": "$0.285 per GB-Month of storage used beyond first 25 free GB-Months",
+        "unit": "GB-Mo",
+        "USD": "0.2850000000",
+        "effective": "2026-08-01T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "service": "AWSSecretsManager",
+    "region": "ap-south-1",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSSecretsManager/current/ap-south-1/index.json",
+    "publicationDate": "2026-09-11T12:46:10Z",
+    "rates": [
+      {
+        "sku": "MU5JA4VMFRFD3S2W",
+        "usage": "APS3-AWSSecretsManagerAPIRequest",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "$0.05 per 10000 API Requests",
+        "unit": "API Requests",
+        "USD": "0.0000050000",
+        "effective": "2025-07-01T00:00:00Z"
+      },
+      {
+        "sku": "AET58EC77HZBS8AB",
+        "usage": "APS3-AWSSecretsManager-Secrets",
+        "beginRange": "0",
+        "endRange": "Inf",
+        "description": "$0.40 per Secret",
+        "unit": "Secrets",
+        "USD": "0.4000000000",
+        "effective": "2025-07-01T00:00:00Z"
+      }
+    ]
+  }
+]

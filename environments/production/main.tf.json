@@ -1,0 +1,263 @@
+{
+  "terraform": {
+    "required_version": "= 1.12.6",
+    "required_providers": {
+      "aws": {
+        "source": "registry.terraform.io/hashicorp/aws",
+        "version": "= 6.69.1"
+      }
+    },
+    "backend": {
+      "s3": {}
+    }
+  },
+  "variable": {
+    "aws_account_id": {
+      "type": "string",
+      "description": "",
+      "validation": [
+        {
+          "condition": "${can(regex(\"^[0-9]{12}$\",var.aws_account_id)) && var.aws_account_id != \"000000000000\"}",
+          "error_message": "Supply the actual permitted 12-digit AWS account ID."
+        }
+      ]
+    },
+    "region": {
+      "type": "string",
+      "description": "Mumbai pilot default; change only after verifying availability and pricing.",
+      "default": "ap-south-1"
+    },
+    "backend_enabled": {
+      "type": "bool",
+      "description": "",
+      "default": false,
+      "validation": [
+        {
+          "condition": "${!var.backend_enabled || (fileexists(var.artifact_path) && can(regex(\"^arn:aws:iam::[0-9]{12}:policy/\",var.runtime_boundary_arn)) && length(var.api_routes)>0)}",
+          "error_message": "Enabling backend requires a real ZIP, runtime boundary and real routes."
+        }
+      ]
+    },
+    "web_enabled": {
+      "type": "bool",
+      "description": "",
+      "default": false
+    },
+    "worker_enabled": {
+      "type": "bool",
+      "description": "",
+      "default": false,
+      "validation": [
+        {
+          "condition": "${!var.worker_enabled || (var.backend_enabled && fileexists(var.worker_artifact_path))}",
+          "error_message": "Worker requires enabled backend and actual worker ZIP."
+        }
+      ]
+    },
+    "artifact_path": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "worker_artifact_path": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "handler": {
+      "type": "string",
+      "description": "",
+      "default": "index.handler"
+    },
+    "worker_handler": {
+      "type": "string",
+      "description": "",
+      "default": "index.handler"
+    },
+    "runtime_boundary_arn": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "api_routes": {
+      "type": "map(string)",
+      "description": "",
+      "default": {}
+    },
+    "staff_origins": {
+      "type": "list(string)",
+      "description": "",
+      "default": [],
+      "validation": [
+        {
+          "condition": "${alltrue([for origin in var.staff_origins: can(regex(\"^https://[A-Za-z0-9.-]+(:[0-9]+)?$\",origin)) && !strcontains(origin,\"*\")])}",
+          "error_message": "Cloud CORS origins must be explicit HTTPS origins."
+        }
+      ]
+    },
+    "budget_enabled": {
+      "type": "bool",
+      "description": "",
+      "default": false
+    },
+    "budget_email": {
+      "type": "string",
+      "description": "",
+      "default": "",
+      "validation": [
+        {
+          "condition": "${!var.budget_enabled || can(regex(\"^[^@]+@[^@]+[.][^@]+$\",var.budget_email))}",
+          "error_message": "Budget alerts require a notification email."
+        }
+      ]
+    },
+    "budget_usd": {
+      "type": "number",
+      "description": "",
+      "default": 10
+    },
+    "deployment_label": {
+      "type": "string",
+      "description": "Immutable app commit or artifact label, not a secret.",
+      "default": "unreleased"
+    },
+    "environment": {
+      "type": "string",
+      "description": "",
+      "default": "production",
+      "validation": [
+        {
+          "condition": "${var.environment == \"production\"}",
+          "error_message": "This root is only for production."
+        }
+      ]
+    },
+    "alarm_emails": {
+      "type": "set(string)",
+      "default": []
+    },
+    "application_environment": {
+      "type": "map(string)",
+      "default": {},
+      "description": "Reviewed non-secret backend configuration. Supply settings from the backend integration example."
+    }
+  },
+  "provider": {
+    "aws": {
+      "region": "${var.region}",
+      "allowed_account_ids": [
+        "${var.aws_account_id}"
+      ],
+      "default_tags": [
+        {
+          "tags": "${local.tags}"
+        }
+      ]
+    }
+  },
+  "data": {
+    "aws_caller_identity": {
+      "current": {}
+    }
+  },
+  "locals": {
+    "name": "brekmate-production",
+    "global_name": "brekmate-production-${var.aws_account_id}-${var.region}",
+    "tags": {
+      "Project": "BrekMate",
+      "Environment": "production",
+      "ManagedBy": "OpenTofu",
+      "Deployment": "${var.deployment_label}"
+    }
+  },
+  "module": {
+    "storage": {
+      "source": "../../modules/storage",
+      "name": "${local.name}",
+      "production": true,
+      "tags": "${local.tags}",
+      "pitr": true
+    },
+    "identity": {
+      "source": "../../modules/identity",
+      "name": "${local.name}",
+      "production": true,
+      "tags": "${local.tags}"
+    },
+    "operations": {
+      "source": "../../modules/operations",
+      "name": "${local.name}",
+      "tags": "${local.tags}",
+      "budget_enabled": "${var.budget_enabled}",
+      "budget_usd": "${var.budget_usd}",
+      "budget_email": "${var.budget_email}",
+      "account_id": "${var.aws_account_id}",
+      "region": "${var.region}",
+      "environment": "production",
+      "alarm_emails": "${var.alarm_emails}"
+    },
+    "web": {
+      "source": "../../modules/staff-web",
+      "count": "${var.web_enabled ? 1 : 0}",
+      "name": "${local.global_name}",
+      "production": true,
+      "tags": "${local.tags}",
+      "connect_origins": "${compact([try(module.runtime[0].api_url,\"\"),\"https://cognito-idp.${var.region}.amazonaws.com\"])}"
+    },
+    "runtime": {
+      "source": "../../modules/runtime",
+      "count": "${var.backend_enabled ? 1 : 0}",
+      "name": "${local.name}",
+      "region": "${var.region}",
+      "account_id": "${var.aws_account_id}",
+      "tags": "${local.tags}",
+      "table_names": "${module.storage.table_names}",
+      "table_arns": "${module.storage.table_arns}",
+      "secret_arns": "${module.storage.secret_arns}",
+      "issuers": "${module.identity.issuers}",
+      "clients": "${module.identity.clients}",
+      "artifact_path": "${var.artifact_path}",
+      "handler": "${var.handler}",
+      "worker_enabled": "${var.worker_enabled}",
+      "worker_artifact_path": "${var.worker_artifact_path}",
+      "worker_handler": "${var.worker_handler}",
+      "boundary_arn": "${var.runtime_boundary_arn}",
+      "routes": "${var.api_routes}",
+      "origins": "${var.staff_origins}",
+      "alarm_topic_arn": "${module.operations.topic_arn}",
+      "log_days": 30,
+      "concurrency": 10,
+      "application_environment": "${merge(var.application_environment,{OTP_SECRET_ARN=module.storage.delivery_otp_secret_arn})}"
+    }
+  },
+  "output": {
+    "environment": {
+      "value": "production"
+    },
+    "account_id": {
+      "value": "${data.aws_caller_identity.current.account_id}"
+    },
+    "table_names": {
+      "value": "${module.storage.table_names}"
+    },
+    "identity": {
+      "value": {
+        "clients": "${module.identity.clients}",
+        "pool_ids": "${module.identity.pool_ids}",
+        "issuers": "${module.identity.issuers}"
+      }
+    },
+    "api_url": {
+      "value": "${try(module.runtime[0].api_url,null)}"
+    },
+    "staff_url": {
+      "value": "${try(module.web[0].url,null)}"
+    },
+    "staff_bucket": {
+      "value": "${try(module.web[0].bucket,null)}"
+    },
+    "staff_distribution": {
+      "value": "${try(module.web[0].distribution_id,null)}"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+name: Infrastructure checks
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source and policy tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Install checksum-verified OpenTofu
+        run: python3 scripts/install_tofu.py "$RUNNER_TEMP/tofu-bin"
+      - name: Provider validation and mocked plan tests only
+        env:
+          TOFU_BIN: ${{ runner.temp }}/tofu-bin/tofu
+          AWS_EC2_METADATA_DISABLED: 'true'
+        run: python3 scripts/check.py

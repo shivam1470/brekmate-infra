@@ -1,0 +1,152 @@
+{
+  "terraform": {
+    "required_version": "= 1.12.6",
+    "required_providers": {
+      "aws": {
+        "source": "registry.terraform.io/hashicorp/aws",
+        "version": "= 6.69.1"
+      }
+    }
+  },
+  "variable": {
+    "aws_account_id": {
+      "type": "string",
+      "description": "",
+      "validation": [
+        {
+          "condition": "${can(regex(\"^[0-9]{12}$\",var.aws_account_id)) && var.aws_account_id != \"000000000000\"}",
+          "error_message": "Supply the actual permitted 12-digit AWS account ID."
+        }
+      ]
+    },
+    "region": {
+      "type": "string",
+      "description": "Mumbai pilot default; change only after verifying availability and pricing.",
+      "default": "ap-south-1"
+    },
+    "github_repositories": {
+      "type": "set(string)",
+      "description": "",
+      "default": [],
+      "validation": [
+        {
+          "condition": "${alltrue([for repo in var.github_repositories: can(regex(\"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$\",repo)) && !strcontains(repo,\"*\")])}",
+          "error_message": "Use exact owner/repo names, never wildcards."
+        }
+      ]
+    },
+    "existing_github_oidc_provider_arn": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    }
+  },
+  "provider": {
+    "aws": {
+      "region": "${var.region}",
+      "allowed_account_ids": [
+        "${var.aws_account_id}"
+      ]
+    }
+  },
+  "locals": {
+    "github_provider_arn": "${var.existing_github_oidc_provider_arn != \"\" ? var.existing_github_oidc_provider_arn : try(aws_iam_openid_connect_provider.github[0].arn,\"\")}"
+  },
+  "resource": {
+    "aws_s3_bucket": {
+      "state": {
+        "bucket": "brekmate-state-${var.aws_account_id}-${var.region}",
+        "force_destroy": false,
+        "lifecycle": {
+          "prevent_destroy": true
+        },
+        "tags": {
+          "Project": "BrekMate",
+          "Purpose": "OpenTofuState"
+        }
+      }
+    },
+    "aws_s3_bucket_public_access_block": {
+      "state": {
+        "bucket": "${aws_s3_bucket.state.id}",
+        "block_public_acls": true,
+        "block_public_policy": true,
+        "ignore_public_acls": true,
+        "restrict_public_buckets": true
+      }
+    },
+    "aws_s3_bucket_versioning": {
+      "state": {
+        "bucket": "${aws_s3_bucket.state.id}",
+        "versioning_configuration": [
+          {
+            "status": "Enabled"
+          }
+        ]
+      }
+    },
+    "aws_s3_bucket_server_side_encryption_configuration": {
+      "state": {
+        "bucket": "${aws_s3_bucket.state.id}",
+        "rule": [
+          {
+            "apply_server_side_encryption_by_default": [
+              {
+                "sse_algorithm": "AES256"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "aws_s3_bucket_policy": {
+      "state": {
+        "bucket": "${aws_s3_bucket.state.id}",
+        "policy": "${jsonencode({\"Version\" = \"2012-10-17\", \"Statement\" = [{\"Effect\" = \"Deny\", \"Action\" = [\"s3:*\"], \"Resource\" = [aws_s3_bucket.state.arn, \"${aws_s3_bucket.state.arn}/*\"], \"Principal\" = \"*\", \"Condition\" = {\"Bool\" = {\"aws:SecureTransport\" = \"false\"}}}]})}"
+      }
+    },
+    "aws_iam_policy": {
+      "runtime_boundary": {
+        "name": "brekmate-runtime-boundary",
+        "policy": "${jsonencode({\"Version\" = \"2012-10-17\", \"Statement\" = [{\"Effect\" = \"Allow\", \"Action\" = [\"dynamodb:GetItem\", \"dynamodb:PutItem\", \"dynamodb:UpdateItem\", \"dynamodb:DeleteItem\", \"dynamodb:Query\", \"dynamodb:ConditionCheckItem\", \"dynamodb:DescribeTable\"], \"Resource\" = [\"arn:aws:dynamodb:${var.region}:${var.aws_account_id}:table/brekmate-*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"logs:CreateLogStream\", \"logs:PutLogEvents\"], \"Resource\" = [\"arn:aws:logs:${var.region}:${var.aws_account_id}:log-group:/aws/lambda/brekmate-*:*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"sqs:SendMessage\", \"sqs:ReceiveMessage\", \"sqs:DeleteMessage\", \"sqs:GetQueueAttributes\", \"sqs:ChangeMessageVisibility\"], \"Resource\" = [\"arn:aws:sqs:${var.region}:${var.aws_account_id}:brekmate-*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"secretsmanager:GetSecretValue\"], \"Resource\" = [\"arn:aws:secretsmanager:${var.region}:${var.aws_account_id}:secret:brekmate-*\"]}]})}",
+        "lifecycle": {
+          "prevent_destroy": true
+        }
+      }
+    },
+    "aws_iam_openid_connect_provider": {
+      "github": {
+        "count": "${length(var.github_repositories)>0 && var.existing_github_oidc_provider_arn==\"\" ? 1 : 0}",
+        "url": "https://token.actions.githubusercontent.com",
+        "client_id_list": [
+          "sts.amazonaws.com"
+        ]
+      }
+    },
+    "aws_iam_role": {
+      "plan": {
+        "for_each": "${length(var.github_repositories)>0 ? toset([\"staging\",\"production\"]) : toset([])}",
+        "name": "brekmate-${each.key}-plan",
+        "assume_role_policy": "${jsonencode({\"Version\" = \"2012-10-17\", \"Statement\" = [{\"Effect\" = \"Allow\", \"Principal\" = {\"Federated\" = local.github_provider_arn}, \"Action\" = \"sts:AssumeRoleWithWebIdentity\", \"Condition\" = {\"StringEquals\" = {\"token.actions.githubusercontent.com:aud\" = \"sts.amazonaws.com\", \"token.actions.githubusercontent.com:sub\" = \"${[for repo in var.github_repositories : \\\"repo:${repo}:environment:${each.key}\\\"]}\"}}}]})}"
+      }
+    },
+    "aws_iam_role_policy": {
+      "plan": {
+        "for_each": "${aws_iam_role.plan}",
+        "role": "${each.value.id}",
+        "policy": "${jsonencode({\"Version\" = \"2012-10-17\", \"Statement\" = [{\"Effect\" = \"Allow\", \"Action\" = [\"s3:ListBucket\"], \"Resource\" = [aws_s3_bucket.state.arn], \"Condition\" = {\"StringLike\" = {\"s3:prefix\" = [\"${each.key}/*\"]}}}, {\"Effect\" = \"Allow\", \"Action\" = [\"s3:GetObject\"], \"Resource\" = [\"${aws_s3_bucket.state.arn}/${each.key}/terraform.tfstate\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"s3:GetObject\", \"s3:PutObject\", \"s3:DeleteObject\"], \"Resource\" = [\"${aws_s3_bucket.state.arn}/${each.key}/terraform.tfstate.tflock\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"dynamodb:DescribeTable\", \"dynamodb:DescribeContinuousBackups\", \"dynamodb:DescribeTimeToLive\", \"dynamodb:ListTagsOfResource\"], \"Resource\" = [\"arn:aws:dynamodb:${var.region}:${var.aws_account_id}:table/brekmate-${each.key}-*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"secretsmanager:DescribeSecret\", \"secretsmanager:GetResourcePolicy\"], \"Resource\" = [\"arn:aws:secretsmanager:${var.region}:${var.aws_account_id}:secret:brekmate-${each.key}/*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"lambda:GetFunction\", \"lambda:GetFunctionConfiguration\", \"lambda:ListVersionsByFunction\", \"lambda:GetAlias\", \"lambda:GetPolicy\"], \"Resource\" = [\"arn:aws:lambda:${var.region}:${var.aws_account_id}:function:brekmate-${each.key}-*\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"s3:GetBucket*\", \"s3:GetEncryptionConfiguration\", \"s3:GetLifecycleConfiguration\"], \"Resource\" = [\"arn:aws:s3:::brekmate-${each.key}-${var.aws_account_id}-${var.region}-staff\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"iam:GetRole\", \"iam:GetRolePolicy\", \"iam:ListRolePolicies\", \"iam:ListAttachedRolePolicies\"], \"Resource\" = [\"arn:aws:iam::${var.aws_account_id}:role/brekmate-${each.key}-*-runtime\"]}, {\"Effect\" = \"Allow\", \"Action\" = [\"sts:GetCallerIdentity\", \"cloudwatch:DescribeAlarms\", \"logs:DescribeLogGroups\", \"logs:ListTagsForResource\", \"cognito-idp:ListUserPools\", \"cloudfront:ListDistributions\", \"budgets:ViewBudget\"], \"Resource\" = [\"*\"]}, {Effect=\"Allow\",Action=[\"cognito-idp:DescribeUserPool\",\"cognito-idp:DescribeUserPoolClient\",\"cognito-idp:GetGroup\",\"cognito-idp:ListTagsForResource\"],Resource=[\"arn:aws:cognito-idp:${var.region}:${var.aws_account_id}:userpool/*\"]}, {Effect=\"Allow\",Action=[\"cloudfront:GetDistribution\",\"cloudfront:GetDistributionConfig\",\"cloudfront:GetOriginAccessControl\",\"cloudfront:GetResponseHeadersPolicy\",\"cloudfront:DescribeFunction\",\"cloudfront:GetFunction\",\"cloudfront:ListTagsForResource\"],Resource=[\"*\"]}, {Effect=\"Allow\",Action=[\"sqs:GetQueueAttributes\",\"sqs:GetQueueUrl\",\"sqs:ListQueueTags\"],Resource=[\"arn:aws:sqs:${var.region}:${var.aws_account_id}:brekmate-${each.key}-*\"]}, {Effect=\"Allow\",Action=[\"sns:GetTopicAttributes\",\"sns:ListTagsForResource\",\"sns:ListSubscriptionsByTopic\"],Resource=[\"arn:aws:sns:${var.region}:${var.aws_account_id}:brekmate-${each.key}-*\"]}, {Effect=\"Allow\",Action=[\"apigateway:GET\"],Resource=[\"arn:aws:apigateway:${var.region}::/apis/*\"]}, {Effect=\"Allow\",Action=[\"iam:GetPolicy\",\"iam:GetPolicyVersion\"],Resource=[aws_iam_policy.runtime_boundary.arn]}]})}"
+      }
+    }
+  },
+  "output": {
+    "state_bucket": {
+      "value": "${aws_s3_bucket.state.id}"
+    },
+    "runtime_boundary_arn": {
+      "value": "${aws_iam_policy.runtime_boundary.arn}"
+    },
+    "plan_role_arns": {
+      "value": "${{for k,r in aws_iam_role.plan : k=>r.arn}}"
+    }
+  }
+}
